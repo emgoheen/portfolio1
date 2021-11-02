@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, VERSION } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'portfolio1';
+  constructor(private title: Title) { }
+  
+  ngOnInit() {
+    this.title.setTitle(`Emily's Portfolio ${VERSION.full}`)
+  }
 }
